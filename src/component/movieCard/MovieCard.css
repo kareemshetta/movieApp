@@ -1,0 +1,28 @@
+.small {
+  font-size: 14;
+  color: #aaa;
+  text-overflow: ellipsis;
+
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+i:hover {
+  cursor: pointer;
+}
+
+.top {
+  top: 3px;
+  right: 3px;
+}
+
+@media (max-width: 450px) {
+  .card-flex {
+    width: 100%;
+  }
+}
+.card-flex {
+  width: 20rem;
+}

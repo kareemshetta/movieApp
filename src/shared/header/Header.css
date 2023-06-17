@@ -1,0 +1,13 @@
+.active {
+  margin-top: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  padding: 1px;
+  color: white;
+
+  background-color: #aaa;
+  border-radius: 10px;
+}

@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "./../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./router/AppRouter";
+import { useState } from "react";
+import LanguageContext from "./context/languageContext";
 function App() {
+  const [lang, setLang] = useState("en");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LanguageContext.Provider value={{ lang, setLang }}>
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
+    </LanguageContext.Provider>
   );
 }
 
 export default App;
+//0f2fa3f84537ad4b53c9e3c913d2e012
