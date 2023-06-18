@@ -6,7 +6,7 @@ export default function HomeCard({ movie, goToDetailsHandler }) {
       onClick={() => {
         goToDetailsHandler(movie);
       }}
-      className=" col-12 col-md-5 col-lg-2 mt-3 pointer rounded d-flex align-items-center justify-content-center position-relative"
+      className=" col-12 col-md-5 col-lg-2 mt-3  pointer rounded d-flex align-items-center justify-content-center position-relative"
       key={movie.id}
       style={{
         height: "250px",

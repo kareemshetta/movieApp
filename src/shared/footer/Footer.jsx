@@ -80,15 +80,6 @@ export default function Footer() {
                         <i className="fab fa-facebook"></i>
                       </a>
                     </li>
-                    <li>
-                      <a
-                        target="_blank"
-                        className="twitter"
-                        href="https://www.facebook.com/karim.sheta.58"
-                      >
-                        <i className="fab fa-twitter"></i>
-                      </a>
-                    </li>
 
                     <li>
                       <a

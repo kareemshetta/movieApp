@@ -107,7 +107,7 @@ export default function Home() {
           <i className="fa-solid fa-spinner fa-spin text-primary fa-3x"></i>
         </div>
       ) : (
-        <div className="row sm-gap justify-content-center h-100">
+        <div className="row sm-gap mx-2 justify-content-center h-100">
           <div className=" col-12 height-50  d-flex justify-content-center align-items-center ">
             <div
               id="carouselExampleAutoplaying"
