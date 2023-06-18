@@ -31,7 +31,9 @@ export default function MovieDetail() {
           <i className="fa-solid fa-spinner fa-spin text-primary fa-3x"></i>
         </div>
       ) : (
-        <SearchCard movie={movieDetails}></SearchCard>
+        <div className="container">
+          <SearchCard movie={movieDetails}></SearchCard>
+        </div>
       )}
     </>
   );

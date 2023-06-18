@@ -5,10 +5,10 @@ export default function SearchCard({ movie }) {
   return (
     <div className="movie h-100 my-5  ">
       <div className="row g-3 rounded-lg shadow-lg">
-        <div className="col-12 col-md-4">
+        <div className="col-12 col-md-4 my-2">
           <img
             width={"100%"}
-            height={"100%"}
+            height={"270px"}
             src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
             alt=""
             className="rounded"
