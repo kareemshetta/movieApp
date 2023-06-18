@@ -37,11 +37,11 @@ export default function Header() {
 
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
+      className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top p-2 shadow "
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
       <div className="container-fluid d-flex align-items-center ">
-        <a className="navbar-brand mx-2" href="#">
+        <a className="navbar-brand mx-2 title" href="#">
           <i className="fas fa-film text-info mx-1"></i>
           {lang === "ar" ? " شــــاهد" : "Watch"}
         </a>
@@ -115,9 +115,9 @@ export default function Header() {
               </NavLink>
 
               <p
-                className={`position-absolute top-0 ${
+                className={`position-absolute top--5 ${
                   lang === "ar" ? "start-0" : "end-0"
-                } badge bg-warning fs-12`}
+                } badge bg-warning fs-10`}
               >
                 {favouriteList.length}
               </p>
@@ -153,7 +153,7 @@ export default function Header() {
                 {lang === "ar" ? "اللــغة" : "language"}
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
+                <li className="pointer">
                   <a
                     className="dropdown-item"
                     onClick={() => {
@@ -166,7 +166,7 @@ export default function Header() {
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
-                <li>
+                <li className="pointer">
                   <a
                     className="dropdown-item"
                     onClick={() => {

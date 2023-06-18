@@ -7,7 +7,7 @@ export default function FavouriteMovies() {
   return (
     <div className="row justify-content-center align-items-center p-4 gapp">
       {favouriteList.length < 1 ? (
-        <div className="alert alert-warning p-4 text-center">
+        <div className="alert alert-warning p-4 text-center ">
           Opss!!! No Favourite Movies please add some
         </div>
       ) : (

@@ -33,16 +33,17 @@ export default function MovieCard({ movie }) {
   return (
     <div
       className="card col-12 col-md-6 col-lg-2  p-0  position-relative card-flex "
-      style={{ height: "27rem" }}
+      style={{ height: "27rem", width: "20rem" }}
     >
       <Image
+        // NativeImgProps={{ height: "300px" }}
         className="card-img-top"
         src={`${
           movie.backdrop_path === null
             ? "https://placehold.co/600x400/EEE/31343C?font=montserrat&text=No+Film+Image+Provided"
             : `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`
         }`}
-        fallback={<Shimmer width={352} height={300} />}
+        fallback={<Shimmer width={320} height={300} />}
       />
 
       <div className="card-body">

@@ -71,7 +71,7 @@ export default function TopRatedMovies() {
   }, [lang]);
 
   return (
-    <div className="row justify-content-center align-items-center gapp">
+    <div className="row justify-content-center align-items-center gapp my-2">
       {movies.length < 1 ? (
         <div style={{ width: "50px", height: "50px" }}>
           <i className="fa-solid fa-spinner fa-spin text-primary fa-3x"></i>
@@ -92,7 +92,7 @@ export default function TopRatedMovies() {
               {isLoading ? (
                 <i className="fa-solid fa-spinner fa-spin text-white fa-2x"></i>
               ) : (
-                "load more"
+                `${lang === "ar" ? "تحمـيل المزيد" : "load more"}`
               )}
             </button>
           </div>

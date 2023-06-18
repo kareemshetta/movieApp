@@ -85,7 +85,7 @@ export default function Movies() {
               {isLoading ? (
                 <i className="fa-solid fa-spinner fa-spin text-white fa-2x"></i>
               ) : (
-                "load more"
+                `${lang === "ar" ? "تحمـيل المزيد" : "load more"}`
               )}
             </button>
           </div>

@@ -94,7 +94,7 @@ export default function Home() {
   }, [lang]);
 
   return (
-    <div className="container py-4">
+    <div className="container py-2">
       {isLoading ? (
         <div
           style={{
@@ -107,7 +107,7 @@ export default function Home() {
           <i className="fa-solid fa-spinner fa-spin text-primary fa-3x"></i>
         </div>
       ) : (
-        <div className="row sm-gap justify-content-center">
+        <div className="row sm-gap justify-content-center h-100">
           <div className=" col-12 height-50  d-flex justify-content-center align-items-center ">
             <div
               id="carouselExampleAutoplaying"
@@ -168,7 +168,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="col-md-6 col-lg-2 bg-light rounded p-2 mt-3">
+          <div className="col-md-5 col-lg-2 bg-light rounded p-2 mt-3">
             <strong>
               {lang === "ar"
                 ? "الافلام الاكثر انتشاراً"
@@ -189,7 +189,7 @@ export default function Home() {
             );
           })}
 
-          <div className="col-md-6 col-lg-2 bg-light rounded p-2 mt-4">
+          <div className="col-md-5 col-lg-2 bg-light rounded p-2 mt-4">
             <strong>
               {lang === "ar" ? "الافلام الاعلي تقيماً" : "Top Rated Movies"}
             </strong>{" "}
@@ -208,7 +208,7 @@ export default function Home() {
             );
           })}
 
-          <div className="col-md-6 col-lg-2  bg-light rounded p-2 mt-4 ">
+          <div className="col-md-5 col-lg-2  bg-light rounded p-2 mt-4 ">
             <strong>
               {lang === "ar" ? "الافلام القادمة" : "Upcoming  Movies"}
             </strong>{" "}

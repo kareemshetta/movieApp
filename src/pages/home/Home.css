@@ -26,13 +26,17 @@
   transform: translate(50%);
 }
 .height-50 {
-  width: 80vw;
+  width: 90vw;
 }
 
 @media (max-width: 600px) {
+  .height-50 {
+    width: 100vw;
+  }
   .p-center,
   .now-playing {
-    font-size: 15px;
+    font-size: 12px;
+    font-weight: 300;
   }
 }
 
