@@ -1,5 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
+import { checkLogin, isLoginUser } from "../store/slices/AuthSlice";
+import { useDispatch, useSelector } from "react-redux";
+import ProtectedRoute from "../component/protectedRoute/ProtectedRoute";
 // import ContactUs from "../pages/contactUs/ContactUs";
 // import AboutUs from "../pages/aboutUs/AboutUs";
 // import NotFound from "../pages/notFound/NotFound";
@@ -31,6 +34,17 @@ const FavouriteMovies = React.lazy(() =>
 );
 
 const AppRouter = () => {
+  const isUserLogin = useSelector(isLoginUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkLogin());
+  }, []);
+  useEffect(() => {
+    dispatch(checkLogin());
+    // console.log("running");
+    console.log(isUserLogin);
+  }, [isUserLogin]);
   const loadingComponent = (
     <div
       className="d-flex justify-content-center align-items-center mx-auto "
@@ -46,89 +60,111 @@ const AppRouter = () => {
           path="/"
           element={
             <Suspense fallback={loadingComponent}>
-              <Home />
+              {isUserLogin ? <Home></Home> : <FormLogin />}
             </Suspense>
           }
         />
+
         <Route
           path="/movie"
           element={
-            <Suspense fallback={loadingComponent}>
-              <Movies />
-            </Suspense>
+            <ProtectedRoute>
+              <Suspense fallback={loadingComponent}>
+                <Movies />
+              </Suspense>
+            </ProtectedRoute>
           }
         />
         <Route
           path="/top-rated-movie"
           element={
             <Suspense fallback={loadingComponent}>
-              <TopRatedMovies />
+              <ProtectedRoute>
+                <TopRatedMovies />
+              </ProtectedRoute>
             </Suspense>
           }
         />
 
         <Route
-          path="/home-movie"
+          path="/home-movies"
           element={
-            <Suspense fallback={loadingComponent}>
-              <Home />
-            </Suspense>
+            <ProtectedRoute>
+              <Suspense fallback={loadingComponent}>
+                <Home />
+              </Suspense>
+            </ProtectedRoute>
           }
         />
         <Route
           path="/upcoming-movie"
           element={
-            <Suspense fallback={loadingComponent}>
-              <UpcomingMovies />
-            </Suspense>
+            <ProtectedRoute>
+              <Suspense fallback={loadingComponent}>
+                <UpcomingMovies />
+              </Suspense>
+            </ProtectedRoute>
           }
         />
         <Route
           path="/movie-details/:id"
           element={
-            <Suspense fallback={loadingComponent}>
-              <MovieDetail />
-            </Suspense>
+            <ProtectedRoute>
+              <Suspense fallback={loadingComponent}>
+                <MovieDetail />
+              </Suspense>
+            </ProtectedRoute>
           }
         />
         <Route
           path="/contact-us"
           element={
-            <Suspense fallback={loadingComponent}>
-              <ContactUs />
-            </Suspense>
+            <ProtectedRoute>
+              <Suspense fallback={loadingComponent}>
+                <ContactUs />
+              </Suspense>
+            </ProtectedRoute>
           }
         />
         <Route
           path="/movie-favourite"
           element={
-            <Suspense fallback={loadingComponent}>
-              <FavouriteMovies />
-            </Suspense>
+            <ProtectedRoute>
+              <Suspense fallback={loadingComponent}>
+                <FavouriteMovies />
+              </Suspense>
+            </ProtectedRoute>
           }
         ></Route>
         <Route
           path="/about-us"
           element={
-            <Suspense fallback={loadingComponent}>
-              <AboutUs />
-            </Suspense>
+            <ProtectedRoute>
+              {" "}
+              <Suspense fallback={loadingComponent}>
+                <AboutUs />
+              </Suspense>
+            </ProtectedRoute>
           }
         />
       </Route>
       <Route
         path="/movie-search/:name"
         element={
-          <Suspense fallback={loadingComponent}>
-            <Search />
-          </Suspense>
+          <ProtectedRoute>
+            {" "}
+            <Suspense fallback={loadingComponent}>
+              <Search />
+            </Suspense>
+          </ProtectedRoute>
         }
       />
       <Route
-        path="/form"
+        path="/auth"
         element={
           <Suspense fallback={loadingComponent}>
             <FormLogin />
+            {/* {isUserLogin ? <NavLayout></NavLayout> : <FormLogin />} */}
           </Suspense>
         }
       />
