@@ -12,7 +12,7 @@ export default function ProtectedRoute({ children }) {
   if (isUserLogin) {
     return children;
   } else {
-    return <Navigate to="/form"></Navigate>;
+    return <Navigate to="/auth"></Navigate>;
   }
 
   //   return {isLoginUser?children:}<div>ProtectedRoute</div>;
