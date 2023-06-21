@@ -46,7 +46,7 @@ export default function Header() {
       <div className="container-fluid d-flex align-items-center ">
         <Link className="navbar-brand mx-2 title" to="/home-movies">
           <i className="fas fa-film text-info mx-1"></i>
-          {lang === "ar" ? " شــــاهد" : "Watch"}
+          {lang === "ar" ? " شـــــاهد" : "Watch"}
         </Link>
         <button
           className="navbar-toggler"
