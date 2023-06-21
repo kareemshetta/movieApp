@@ -1,18 +1,21 @@
 import React, { useState } from "react";
-import { NavLink, useLocation, useMatch } from "react-router-dom";
+import { Link, NavLink, useLocation, useMatch } from "react-router-dom";
 import { useRef } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
+import { logOut } from "../../store/slices/AuthSlice";
+import { useDispatch } from "react-redux";
 import LanguageContext from "../../context/languageContext";
 import "./Header.css";
 export default function Header() {
   const favouriteList = useSelector((state) => state.favourite.favouriteMovies);
+  const dispatch = useDispatch();
   const [value, setValue] = useState("");
   const { lang, setLang } = useContext(LanguageContext);
   const inputRef = useRef(null);
   const homeMatch = useMatch("/movies");
-  const mainMatch = useMatch("/home-movie");
+  const mainMatch = useMatch("/home-movies");
   const topRatedMatch = useMatch("/top-rated-movies");
   const upcomingMatch = useMatch("/upcoming-movies");
   // const aboutMatch = useMatch("/about-us");
@@ -37,14 +40,14 @@ export default function Header() {
 
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top p-2 shadow "
+      className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top p-2 shadow fixed-height "
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
       <div className="container-fluid d-flex align-items-center ">
-        <a className="navbar-brand mx-2 title" href="#">
+        <Link className="navbar-brand mx-2 title" to="/home-movies">
           <i className="fas fa-film text-info mx-1"></i>
-          {lang === "ar" ? " شـــــاهد" : "Watch"}
-        </a>
+          {lang === "ar" ? " شــــاهد" : "Watch"}
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -66,7 +69,7 @@ export default function Header() {
               <NavLink
                 className={`nav-link ${mainMatch?.isExact ? "active " : ""}`}
                 aria-current="page"
-                to="home-movie"
+                to="/home-movies"
               >
                 {lang === "ar" ? "الرئيسية" : "Home"}
               </NavLink>
@@ -210,6 +213,16 @@ export default function Header() {
             >
               Search
             </button>
+            <span
+              onClick={() => {
+                console.log("hvbhvbh");
+                dispatch(logOut());
+                navigate("/auth");
+              }}
+              className="text-white pointer mx-1 logout "
+            >
+              {lang === "ar" ? "تسجيل الخروج" : " logOut"}
+            </span>
             <small className=" d-flex mx-1 text-white badge bg-primary">
               {lang.toUpperCase()}
             </small>
