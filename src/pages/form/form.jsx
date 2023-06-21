@@ -222,7 +222,7 @@ export default function FormLogin() {
                   {userError.message}
                 </div>
               ) : userStatus === "succeeded" && !isUserLogin ? (
-                <div className="text-sucess px-4 mx-auto text-center  ">
+                <div className="text-success px-4 mx-auto text-center  ">
                   successful Register
                 </div>
               ) : (
