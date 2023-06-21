@@ -140,7 +140,6 @@ const AppRouter = () => {
           path="/about-us"
           element={
             <ProtectedRoute>
-              {" "}
               <Suspense fallback={loadingComponent}>
                 <AboutUs />
               </Suspense>
@@ -152,7 +151,6 @@ const AppRouter = () => {
         path="/movie-search/:name"
         element={
           <ProtectedRoute>
-            {" "}
             <Suspense fallback={loadingComponent}>
               <Search />
             </Suspense>
