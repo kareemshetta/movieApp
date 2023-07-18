@@ -34,7 +34,7 @@ export const signInUserByEmailAndPassword = createAsyncThunk(
         password: password,
         returnSecureToken: true,
       });
-      console.log(response);
+      // console.log(response);
       return response.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err);
@@ -54,9 +54,9 @@ const AuthSlice = createSlice({
       state.error = null;
     },
     checkLogin: (state, action) => {
-      console.log("check login");
+      // console.log("check login");
       let token = localStorage.getItem("accessToken");
-      console.log(token);
+      // console.log(token);
       if (token) {
         state.isLoginUser = true;
       } else {

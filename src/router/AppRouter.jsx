@@ -43,7 +43,7 @@ const AppRouter = () => {
   useEffect(() => {
     dispatch(checkLogin());
     // console.log("running");
-    console.log(isUserLogin);
+    // console.log(isUserLogin);
   }, [isUserLogin]);
   const loadingComponent = (
     <div
